@@ -1,0 +1,94 @@
+*{
+	margin:0px;
+	padding:0px;
+}
+html,body,.door{
+	width:100%;
+	height:100%;
+	overflow:hidden;
+	transform-style:preserve-3d;
+	-webkit-transform-style:preserve-3d;
+	-moz-transform-style:preserve-3d;
+	-ms-transform-style:preserve-3d;
+	-o-transform-style:preserve-3d;
+	perspective:1000;
+	background:url("imgs/bg.jpg");
+}
+.section{
+	width:50%;
+	height:100%;
+	position:absolute;
+	background:url("imgs/door.jpg");
+	box-shadow:0px 0px 30px pink inset;
+}
+.section-left{
+	left:0px;
+	background-color:#ccc;
+	animation:openLeft 5s;
+	animation-timing-function:ease-in-out;
+	transition:2s all;
+	transform-origin:0% 0%;
+	transform:rotateY(80deg) rotateZ(5deg) translateX(-50px);
+}
+.section-right{
+	right:0px;
+	background-color:#ccc;
+	animation:openRight 5s;
+	animation-timing-function:ease-in-out;
+	transition:2s all;
+	transform-origin:100% 100%;
+	transform:rotateY(80deg) rotateZ(-5deg) translateX(50px);
+}
+@keyframes openLeft{
+	0%{
+		transform:rotateY(0deg) rotateZ(0deg) translateX(0px);
+	}
+	100%{
+		transform:rotateY(80deg) rotateZ(5deg) translateX(-50px);
+	}
+}
+@keyframes openRight{
+	0%{
+		transform:rotateY(0deg) rotateZ(0deg) translateX(0px);
+	}
+	100%{
+		transform:rotateY(80deg) rotateZ(-5deg) translateX(50px);
+	}
+}
+.time1,.time2,.time3{
+	position:absolute;
+	width:40%;
+	height:60%;
+	top:20%;
+	left:30%;
+	line-height:400px;
+	text-align:center;
+	opacity:0;
+	z-index:1000;
+}
+.time1{
+	animation:timeTick 2s;
+	animation-delay:2s;
+}
+.time2{
+	animation:timeTick 2s;
+	animation-delay:3.5s;
+}
+.time3{
+	animation:timeTick 2s;
+	animation-delay:5s;
+}
+@keyframes timeTick{
+	0%{
+		font-size:12px;
+		opacity:.5;
+	}
+	50%{
+		font-size:200px;
+		opacity:1;
+	}
+	100%{
+		font-size:12px;
+		opacity:.5;
+	}
+}
